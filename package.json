@@ -1,0 +1,19 @@
+{
+  "name": "adopt-me",
+  "version": "1.0.0",
+  "description": "react practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JosephStalnaker/ReactPractice.git"
+  },
+  "author": "Joseph Stalnaker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JosephStalnaker/ReactPractice/issues"
+  },
+  "homepage": "https://github.com/JosephStalnaker/ReactPractice#readme"
+}
