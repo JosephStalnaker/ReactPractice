@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { withRouter } from "react-router-dom";
 import Carousel from "./Carousel";
+import ErrorBoundary from "./ErrorBoundary";
 
 class Details extends Component {
   state = { loading: true };
@@ -13,16 +14,6 @@ class Details extends Component {
     this.setState(Object.assign({ loading: false }, json.pets[0]));
   }
 
-  //   this.setState({
-  //     loading: false,
-  //     name: json.pets[0].name,
-  //     breed: json.pets[0].breed,
-  //     animal: json.pets[0].animal,
-  //     city: json.pets[0].city,
-  //     state: json.pets[0].state,
-  //     description: json.description[0].description,
-  //   });
-
   render() {
     if (this.state.loading) {
       return <h2>loading...</h2>;
@@ -30,6 +21,7 @@ class Details extends Component {
 
     const { animal, breed, city, state, description, name, images } =
       this.state;
+
     return (
       <div className="details">
         <Carousel images={images} />
@@ -46,4 +38,12 @@ class Details extends Component {
   }
 }
 
-export default withRouter(Details);
+const DetailsWithRouter = withRouter(Details);
+
+export default function DetailsWithErrorBoundary() {
+  return (
+    <ErrorBoundary>
+      <DetailsWithRouter />
+    </ErrorBoundary>
+  );
+}
